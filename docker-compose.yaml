@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+
+  app:
+    build: .
+    restart: always
+    container_name: print_backend
+    command: python -u __main__.py
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/app
+    links:
+      - db
+      
+  db:
+    image: mongo:latest
+    restart: always
+    environment:
+      - MONGO_INITDB_DATABASE=print_db
+      - MONGO_INITDB_ROOT_USERNAME=admin  
+      - MONGO_INITDB_ROOT_PASSWORD=f7531e2d0ea27233ce00b5f01c5bf335
+    volumes:
+      - ./init-db.js:/docker-entrypoint-initdb.d/init-db.js:ro
+    ports:
+      - 2717:27017

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+  </br></br></br>
+  <div class="container">
+    <div class="row ">
+      <div class="col">
+        <form method=post enctype=multipart/form-data id="document">
+          <input type=file name=file>
+          <input type=submit value=Upload>
+        </form>
+        </br>
+        <select class="form-control" name="color" form="document">
+          <option value="blackwhite">Siyah-Beyaz</option>
+          <option value="color">Renkli</option>
+        </select>
+        </br>
+        <select class="form-control" name="front-back" form="document">
+          <option value="front">Tek Taraflı</option>
+          <option value="frontback">Çift Taraflı</option>
+        </select>
+      </div>
+      <div class="col">
+        <img src="static/image/undraw_file_sync_re_0pcx.svg" class="img-fluid" alt="Responsive image">
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

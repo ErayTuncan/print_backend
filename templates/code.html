@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+  </br></br></br>
+  <div class="container">
+    <div class="row ">
+      <div class="col">
+        <h3 class="text-center">Beni Kaydet!</h3>
+        </br>
+        <img src="{{ qr_code }}" class="rounded mx-auto d-block" alt="QR Image">
+        </br>
+          <form method = "post" id="mail">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Mailime yolla!</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <button type="submit" class="btn btn-primary">Yolla</button>
+          </form>
+      </div>
+      <div class="col">
+        <img src="static/image/undraw_file_sync_re_0pcx.svg" class="img-fluid" alt="Responsive image">
+      </div>
+    </div>
+  </div>
+{% endblock %}

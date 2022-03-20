@@ -1,12 +1,7 @@
 import pymongo
 from datetime import datetime
 
-myClient = pymongo.MongoClient(host='db',
-                         port=27017, 
-                         username='admin', 
-                         password='f7531e2d0ea27233ce00b5f01c5bf335',
-                        authSource="admin")
-
+myClient = pymongo.MongoClient("mongodb://localhost:27017/")
 printDB = myClient["print"]
 fileRecordsCOL = printDB["file_records"]
 
